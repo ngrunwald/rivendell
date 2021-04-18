@@ -362,11 +362,11 @@ fn shuffle [@args]{
   sample (count $args) $@args
 }
 
-fn frequencies [@args]{
-  unique &count=$true $@args |
-    each (destruct [v k]{ put [&$k=$v] }) |
-    merge-with $+~ (all)
-}
+# fn frequencies [@args]{
+#   unique &count=$true $@args |
+#     each (destruct [v k]{ put [&$k=$v] }) |
+#     merge-with $+~ (all)
+# }
 
 fn group-by [f @args]{
   mapfn = (comp (partial $into~ [&]) $listify~ (juxt $f (box $put~)))
