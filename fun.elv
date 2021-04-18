@@ -448,9 +448,9 @@ fn reduce-kv [f acc m]{
   put $acc
 }
 
-fn take-nth [n @args]{
-  partition 1 &step=$n $@args | each $explode~
-}
+# fn take-nth [n @args]{
+#   partition 1 &step=$n $@args | each $explode~
+# }
 
 fn take-while [f @args]{
   for x $args {
